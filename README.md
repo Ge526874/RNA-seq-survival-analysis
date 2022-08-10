@@ -257,7 +257,12 @@ print(fit1)
 fit2 <- survdiff(Surv(new_death, event) ~ gene, data = fin_dat)
 pv <- ifelse ( is.na(fit2),next,(round(1 - pchisq(fit2$chisq, length(fit2$n) - 1),3)))[[1]]
 print(pv)
+
+# calculating HR, which is also called exp(coef)
+fit3 <- coxph(Surv(new_death, event) ~ FDX1, data = fin_dat)
+summary(fit3)
 ```
+
 One of the most intresting aspect of survival analysis is to have survival probability in a graph (Kaplan–Meier curve). 
 To draw KM curve:
 ```R
