@@ -194,7 +194,7 @@ scal <- function(x,y){
 }
 z_rna <- scal(rna_vm[,tumor_index],rna_vm[,normal_index])
 
-rm(rna_vm)
+rm(rna_vm) #remove varialbe to free memory
 ```
 Now it is time to define ```survival time``` and ```event``` in ```clinical``` dataset. 
 ```survival time``` could be find under columns that contains "days" in the clinical dataset.
