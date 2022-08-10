@@ -263,7 +263,7 @@ To draw KM curve:
 ```R
 # Change color, linetype by strata, risk.table color by strata
 ggsurvplot(fit1,
-          pval = TRUE, conf.int = TRUE,
+          pval = TRUE, conf.int = FALSE, #If TRUE, plots confidence interval
           risk.table = TRUE, # Add risk table
           risk.table.col = "strata", # Change risk table color by groups
           linetype = "strata", # Change line type by groups
