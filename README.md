@@ -144,8 +144,8 @@ table(substr(colnames(rna),14,15))
 Now using the barcode we can make indexes for tumor and normal samples
 
 ```R
-normal_index <- which(substr(colnames(rna),14,14) == '1')
-tumor_index <- which(substr(colnames(rna),14,14) == '0')
+normal_index <- which(substr(colnames(rna),14,15) == '11')
+tumor_index <- which(substr(colnames(rna),14,15) == '01')
 
 # apply voom function from limma package to normalize the data
 vm <- function(x){
