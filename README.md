@@ -238,7 +238,7 @@ z_rna <- z_rna[, - grep("TCGA-K4-A4AB-01B", colnames(z_rna))]
 Final steps before doing servival analysis is to encode RNA-seq data to dysregulated and intact. by dysregulated we mean genes with |z-score| > 1.96.
 ```R
 dys_rna <- t(apply(z_rna, 1, function(x) ifelse(abs(x) > 1.96,"dysregulated","intact")))
-
+# OR: dys_rna <- apply(z_rna, 2, function(x) ifelse(abs(x) > 1.96,"dysregulated","intact"))
 
 ```
 ### 3-Performing survival analysis
