@@ -225,7 +225,7 @@ table(clinical$vital_status)
 clinical[clinical$vital_status == "Not Reported", ]$barcode
 #[1] "TCGA-K4-A4AB-01B-12R-A28M-07"
 
-clinical <- clinical[-which(row.names(clinical) == "TCGA-K4-A4AB-01B-12R-A28M-07"), ]
+clinical <- clinical[-which(row.names(clinical) == "TCGA-K4-A4AB-01B-12R-A28M-07"), ] #如果有很多要剔除的数据的话，可以采用index的方式来subset数据
 #recoding vital_status
 clinical$event <- ifelse(clinical$vital_status == "Alive", 0,1)
 # create a subset from original clinical data
